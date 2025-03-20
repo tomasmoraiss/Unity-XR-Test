@@ -5,8 +5,6 @@ public class ReturnObjectToOriginalPosition : MonoBehaviour
     private Quaternion initialObjectRotation;
     private Rigidbody rb;
 
-
-
     // Unity function called once when the game starts
     private void Start()
     {
@@ -21,7 +19,6 @@ public class ReturnObjectToOriginalPosition : MonoBehaviour
         rb.angularDamping = 100;
         rb.linearDamping = 100;
         rb.linearVelocity = new Vector3(0f, 0f, 0f);
-        transform.position = initialObjectPosition;
-        transform.rotation = initialObjectRotation;
+        transform.SetPositionAndRotation(initialObjectPosition, initialObjectRotation);
     }
 }
