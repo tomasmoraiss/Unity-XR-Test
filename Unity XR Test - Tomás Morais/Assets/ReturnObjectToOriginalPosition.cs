@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 public class ReturnObjectToOriginalPosition : MonoBehaviour
 {
@@ -11,7 +12,13 @@ public class ReturnObjectToOriginalPosition : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         initialObjectPosition = transform.position;
         initialObjectRotation = transform.rotation;
+        rb.angularDamping = 100;
+        rb.linearDamping = 100;
 
+    }
+
+    private void Update()
+    {
     }
 
     public void OnRelease()
