@@ -1,6 +1,8 @@
 using UnityEngine;
 using DG.Tweening;
 using System.Threading.Tasks;
+using UnityEngine.InputSystem;
+
 public class BuildMenuManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -11,6 +13,7 @@ public class BuildMenuManager : MonoBehaviour
     [SerializeField] private float animationDuration;
     [SerializeField] private Transform handController;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private InputActionReference selectBuildingAction;
 
     // Update is called once per frame
     private void Update()
@@ -31,6 +34,7 @@ public class BuildMenuManager : MonoBehaviour
     public void OpenMenuAnimation()
     {
         buildMenuPanel.DOAnchorPosY(topPositionY, animationDuration);
+        //selectBuildingAction.action.Enable();
     }
 
     async Task CloseMenuAnimation()
@@ -38,9 +42,9 @@ public class BuildMenuManager : MonoBehaviour
         await buildMenuPanel.DOAnchorPosY(bottomPositionY, animationDuration).AsyncWaitForCompletion();
     }
 
-    public void SpawnItemInHand(GameObject prefab)
+    public void ChooseBuilding(GameObject prefab)
     {
-        gameManager.canBuild = true;
         gameManager.buildingToPlace = prefab;
+        gameManager.canBuild = true;
     }
 }

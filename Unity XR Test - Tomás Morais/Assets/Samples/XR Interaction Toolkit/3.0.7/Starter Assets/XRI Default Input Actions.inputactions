@@ -1961,7 +1961,7 @@
                     "name": "Activate",
                     "type": "Button",
                     "id": "41976d89-60de-4deb-bff9-16b4af96b290",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -2051,6 +2051,15 @@
                     "name": "Build",
                     "type": "Button",
                     "id": "8ef782d2-6afe-4a78-8d96-0d4325e48908",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Hold,Press(behavior=1)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Select Building",
+                    "type": "Button",
+                    "id": "eeb3f191-956a-44eb-b3c2-47ec5c4f25ff",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -2352,6 +2361,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Build",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ee4cc41a-2694-4e92-a956-576356edbd10",
+                    "path": "<XRController>{RightHand}/{TriggerTouch}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Building",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

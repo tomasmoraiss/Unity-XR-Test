@@ -10,6 +10,7 @@ public class BuildController : MonoBehaviour
     [SerializeField] private Transform origin;
     [SerializeField] private InputActionReference buildAction;
     [SerializeField] private GameManager gameManager;
+    
     private GameObject building;
     private List<GameObject> buildings = new List<GameObject>();
     
