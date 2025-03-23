@@ -16,10 +16,7 @@ public class ReturnObjectToOriginalPosition : MonoBehaviour
         rb.linearDamping = 100;
 
     }
-
-    private void Update()
-    {
-    }
+    
 
     public void OnRelease()
     {

@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public GameObject buildingToPlace;
     public bool isRaining;
     public bool isSnowing;
+    public bool manuallyCleared;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,9 +16,7 @@ public class GameManager : MonoBehaviour
         isSnowing = false;
         canBuild = false;
         inPreview = false;
-    }
-
-    void Update()
-    {
+        manuallyCleared = false;
+        buildingToPlace = null;
     }
 }

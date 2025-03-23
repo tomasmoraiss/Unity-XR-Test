@@ -4,10 +4,10 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class CleanCityFromEventsController : MonoBehaviour
 {
-[Header("Shake Detection")]
-    [SerializeField] private float shakeThreshold;        // Minimum velocity to count as shake
-    [SerializeField] private float requiredShakeTime;   // Time needed to shake to clean
-    [SerializeField] private float velocitySampleRate;  // How often to check velocity
+    [Header("Shake Detection")]
+    [SerializeField] private float shakeThreshold;
+    [SerializeField] private float requiredShakeTime;
+    [SerializeField] private float velocitySampleRate;
 
     [Header("References")]
     [SerializeField] private GameManager gameManager;
@@ -48,7 +48,6 @@ public class CleanCityFromEventsController : MonoBehaviour
 
     private void Update()
     {
-       
         if (!isBeingHeld || isCleaningComplete) return;
 
         velocityCheckTimer += Time.deltaTime;
@@ -73,7 +72,6 @@ public class CleanCityFromEventsController : MonoBehaviour
             if (currentShakeTime % 0.3f <= velocitySampleRate)
             {
                 float progressPercentage = Mathf.Min((currentShakeTime / requiredShakeTime) * 100f, 100f);
-                Debug.Log($"Shaking... Progress: {progressPercentage:F0}%");
             }
 
             // Check if we've shaken enough
@@ -92,44 +90,30 @@ public class CleanCityFromEventsController : MonoBehaviour
     
     public void CleanBlocks()
     {
-        bool cleaned = false;
-
-        // Add debug logs to check conditions
-        Debug.Log($"Attempting to clean blocks - IsRaining: {gameManager.isRaining}, WaterBlock active: {waterBlock.activeSelf}");
-        Debug.Log($"IsSnowing: {gameManager.isSnowing}, SnowBlock active: {snowBlock.activeSelf}");
-
         if (gameManager.isRaining && waterBlock && waterBlock.activeSelf)
         {
-            Debug.Log("Deactivating water block");
             waterBlock.SetActive(false);
             gameManager.isRaining = false;
-            cleaned = true;
+            gameManager.manuallyCleared = true;
         }
 
-        if (gameManager.isSnowing && snowBlock && !cleaned && snowBlock.activeSelf)
+        if (gameManager.isSnowing && snowBlock && snowBlock.activeSelf)
         {
-            Debug.Log("Deactivating snow block");
             snowBlock.SetActive(false);
             gameManager.isSnowing = false;
-            cleaned = true;
+            gameManager.manuallyCleared = true;
         }
 
-        if (cleaned)
+        if (gameManager.manuallyCleared)
         {
-            Debug.Log("Blocks cleaned by shaking!");
             currentShakeTime = 0f;
-            cleaned = false;
-        }
-        else
-        {
-            Debug.Log("No blocks needed cleaning");
         }
     }
 
     private void OnGrabStart(SelectEnterEventArgs args)
     {
         isBeingHeld = true;
-        isCleaningComplete = false;  // Reset when grabbed
+        isCleaningComplete = false;
         currentShakeTime = 0f;
         velocityCheckTimer = 0f;
     }

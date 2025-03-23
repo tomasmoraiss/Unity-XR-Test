@@ -79,21 +79,12 @@ public class RandomEventsController : MonoBehaviour
     private void ClearEvents()
     {
         StopWeatherEffects();
-        ResetWeatherState();
     }
     
     private void StopWeatherEffects()
     {
         snowParticleSystem?.Stop();
         rainParticleSystem?.Stop();
-    }
-
-    private void ResetWeatherState()
-    {
-        gameManager.isSnowing = false;
-        gameManager.isRaining = false;
-        snowBlockObject.SetActive(false);
-        waterBlockObject.SetActive(false);
     }
     
     private void TriggerSnowEvent()
