@@ -2,14 +2,13 @@ using UnityEngine;
 
 public class PreviewBuildingController : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private Material previewMaterialPrefab;
     [SerializeField] private Material previewMaterialInstance;
-    
     [SerializeField] private GameManager gameManager;
-    private GameObject buildingPreview;
-    
     [SerializeField] private Transform origin;
     
+    private GameObject buildingPreview;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
@@ -17,11 +16,10 @@ public class PreviewBuildingController : MonoBehaviour
         previewMaterialInstance = new Material(previewMaterialPrefab);
         buildingPreview = Instantiate(gameManager.buildingToPlace, gameManager.buildingToPlace.transform.position, Quaternion.identity);
         buildingPreview.GetComponent<MeshRenderer>().material = previewMaterialInstance;
-        //CreatePreview();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if(gameManager.inPreview)
             UpdatePositionOfPreview();
@@ -31,7 +29,7 @@ public class PreviewBuildingController : MonoBehaviour
         }
     }
 
-    void UpdatePositionOfPreview()
+    private void UpdatePositionOfPreview()
     {
         RaycastHit hit;
         if (Physics.Raycast(origin.position, origin.forward, out hit))
