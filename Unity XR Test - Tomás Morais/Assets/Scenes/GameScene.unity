@@ -799,7 +799,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.92156863, g: 0.9254902, b: 0.4, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -836,6 +836,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1834247443}
         m_TargetAssemblyTypeName: BuildMenuManager, Assembly-CSharp
         m_MethodName: CloseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1550290196}
+        m_TargetAssemblyTypeName: PreviewBuildingController, Assembly-CSharp
+        m_MethodName: Start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1201,7 +1213,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.92156863, g: 0.9254902, b: 0.4, a: 1}
     m_PressedColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1238,6 +1250,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1834247443}
         m_TargetAssemblyTypeName: BuildMenuManager, Assembly-CSharp
         m_MethodName: CloseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1550290196}
+        m_TargetAssemblyTypeName: PreviewBuildingController, Assembly-CSharp
+        m_MethodName: Start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1815,7 +1839,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.921478, g: 0.9245283, b: 0.39684942, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2389,6 +2413,17 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 5577348626162100384, guid: eef74b753d1d9404fac5ba2c0ca279d6, type: 3}
   m_PrefabInstance: {fileID: 693868921}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1550290196 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -3046790365241193303, guid: 8a38a81f5d70bc342b49fc0ae4c6da91, type: 3}
+  m_PrefabInstance: {fileID: 5663787364823582009}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fccbaa8f106517243b7a5e465efbe74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1741394690 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7360294750002802279, guid: 1ce6cf44dc622944189b95d7fa3a5b1b, type: 3}
@@ -2732,7 +2767,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.92156863, g: 0.9254902, b: 0.4, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2759,7 +2794,7 @@ MonoBehaviour:
         m_MethodName: ChooseBuilding
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 6941765000743290380, guid: c60edd51c065ceb46b345849a03bc106, type: 3}
+          m_ObjectArgument: {fileID: 100000, guid: b82e76f4092b7d24aaeecddf36fe8d3b, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -2769,6 +2804,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1834247443}
         m_TargetAssemblyTypeName: BuildMenuManager, Assembly-CSharp
         m_MethodName: CloseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1550290196}
+        m_TargetAssemblyTypeName: PreviewBuildingController, Assembly-CSharp
+        m_MethodName: Start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2816,6 +2863,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994299348}
   m_CullTransparentMesh: 1
+--- !u!1001 &5663787364823582009
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -3046790365241193303, guid: 8a38a81f5d70bc342b49fc0ae4c6da91, type: 3}
+      propertyPath: origin
+      value: 
+      objectReference: {fileID: 628397302}
+    - target: {fileID: -3046790365241193303, guid: 8a38a81f5d70bc342b49fc0ae4c6da91, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 8559043477178202243, guid: c881fc78efe9efb44b09cdb8c90cc7f8, type: 3}
+    - target: {fileID: 1920789181094959056, guid: 8a38a81f5d70bc342b49fc0ae4c6da91, type: 3}
+      propertyPath: m_Name
+      value: Preview Building Controller
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595830770841063782, guid: 8a38a81f5d70bc342b49fc0ae4c6da91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.023091465
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595830770841063782, guid: 8a38a81f5d70bc342b49fc0ae4c6da91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.974
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595830770841063782, guid: 8a38a81f5d70bc342b49fc0ae4c6da91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.5908227
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595830770841063782, guid: 8a38a81f5d70bc342b49fc0ae4c6da91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595830770841063782, guid: 8a38a81f5d70bc342b49fc0ae4c6da91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595830770841063782, guid: 8a38a81f5d70bc342b49fc0ae4c6da91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595830770841063782, guid: 8a38a81f5d70bc342b49fc0ae4c6da91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595830770841063782, guid: 8a38a81f5d70bc342b49fc0ae4c6da91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595830770841063782, guid: 8a38a81f5d70bc342b49fc0ae4c6da91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595830770841063782, guid: 8a38a81f5d70bc342b49fc0ae4c6da91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8a38a81f5d70bc342b49fc0ae4c6da91, type: 3}
 --- !u!1001 &5790841483644908454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3099,3 +3211,4 @@ SceneRoots:
   - {fileID: 693868921}
   - {fileID: 829744954}
   - {fileID: 8855053584582872196}
+  - {fileID: 5663787364823582009}

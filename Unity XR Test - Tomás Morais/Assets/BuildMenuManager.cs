@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using DG.Tweening;
 using System.Threading.Tasks;
@@ -45,6 +46,8 @@ public class BuildMenuManager : MonoBehaviour
     public void ChooseBuilding(GameObject prefab)
     {
         gameManager.buildingToPlace = prefab;
+        gameManager.inPreview = true;
         gameManager.canBuild = true;
     }
+    
 }

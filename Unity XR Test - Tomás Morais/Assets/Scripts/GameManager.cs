@@ -3,8 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public bool canBuild;
-    public GameObject waterBlockObject;
-    public GameObject snowBlockObject;
+    public bool inPreview;
     public GameObject buildingToPlace;
     public bool isRaining;
     public bool isSnowing;
@@ -15,6 +14,7 @@ public class GameManager : MonoBehaviour
         isRaining = false;
         isSnowing = false;
         canBuild = false;
+        inPreview = false;
     }
 
     void Update()

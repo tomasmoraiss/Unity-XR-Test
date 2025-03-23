@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &903444410515518759
+--- !u!1 &1920789181094959056
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,44 +8,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8298099822240510255}
-  - component: {fileID: 8559043477178202243}
+  - component: {fileID: 6595830770841063782}
+  - component: {fileID: -3046790365241193303}
   m_Layer: 0
-  m_Name: Game Manager
+  m_Name: Preview Building Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8298099822240510255
+--- !u!4 &6595830770841063782
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903444410515518759}
+  m_GameObject: {fileID: 1920789181094959056}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.274094, y: -8.110362, z: 18.962566}
+  m_LocalPosition: {x: -0.023091465, y: 1.779401, z: -1.5908227}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8559043477178202243
+--- !u!114 &-3046790365241193303
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903444410515518759}
+  m_GameObject: {fileID: 1920789181094959056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dec7d1aff755b4f45a40d8c2f6db481c, type: 3}
+  m_Script: {fileID: 11500000, guid: fccbaa8f106517243b7a5e465efbe74c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBuild: 0
-  inPreview: 0
-  buildingToPlace: {fileID: 100000, guid: 246bcb60ae5be3744a4ea86bab749f44, type: 3}
-  isRaining: 0
-  isSnowing: 0
+  previewMaterialPrefab: {fileID: 2100000, guid: f711921cf43241c48a6726a0faa10414, type: 2}
+  previewMaterialInstance: {fileID: 0}
+  gameManager: {fileID: 0}
+  origin: {fileID: 0}

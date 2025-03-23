@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using DG.Tweening;
+using Random = UnityEngine.Random;
 
 public class RandomEventsController : MonoBehaviour
 {
@@ -27,7 +29,6 @@ public class RandomEventsController : MonoBehaviour
     [SerializeField] private float eventDuration;
 
     private const int EVENT_TYPE_COUNT = 2;
-    private readonly ILogger logger = Debug.unityLogger;
 
     private void Start()
     {
@@ -44,9 +45,7 @@ public class RandomEventsController : MonoBehaviour
 
             if (CanTriggerNewEvent())
             {
-                LogWeatherState("Entered events loop");
                 TriggerRandomWeatherEvent();
-                LogWeatherState("After triggering event");
                 yield return new WaitForSeconds(eventDuration);
             }
             ClearEvents();
@@ -62,7 +61,6 @@ public class RandomEventsController : MonoBehaviour
     private void TriggerRandomWeatherEvent()
     {
         WeatherEventType eventType = (WeatherEventType)Random.Range(0, EVENT_TYPE_COUNT);
-        
         switch (eventType)
         {
             case WeatherEventType.Snow when snowParticleSystem:
@@ -73,17 +71,15 @@ public class RandomEventsController : MonoBehaviour
                 TriggerRainEvent();
                 waterBlockObject.SetActive(true);
                 break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
     }
 
     private void ClearEvents()
     {
-        LogWeatherState("Clearing events");
-        
         StopWeatherEffects();
         ResetWeatherState();
-        
-        LogWeatherState("After clearing events");
     }
     
     private void StopWeatherEffects()
@@ -102,31 +98,23 @@ public class RandomEventsController : MonoBehaviour
     
     private void TriggerSnowEvent()
     {
-        logger.Log("Snowing Event");
         gameManager.isSnowing = true;
         snowBlockObject.SetActive(true);
         
         if (!snowParticleSystem.isPlaying)
         {
             snowParticleSystem.Play();
-            logger.Log($"Snow Particle System Playing: {snowParticleSystem.isPlaying}");
         }
     }
 
     private void TriggerRainEvent()
     {
-        logger.Log("Raining Event");
         gameManager.isRaining = true;
         
         if (!rainParticleSystem.isPlaying)
         {
             rainParticleSystem.Play();
-            logger.Log($"Rain Particle System Playing: {rainParticleSystem.isPlaying}");
         }
     }
-
-    private void LogWeatherState(string context)
-    {
-        logger.Log($"{context} - Snowing: {gameManager.isSnowing}, Raining: {gameManager.isRaining}");
-    }
+    
 }

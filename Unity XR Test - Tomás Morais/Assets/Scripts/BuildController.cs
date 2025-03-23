@@ -12,7 +12,6 @@ public class BuildController : MonoBehaviour
     [SerializeField] private GameManager gameManager;
     
     private GameObject building;
-    private List<GameObject> buildings = new List<GameObject>();
     
     // Update is called once per frame
 
@@ -33,9 +32,9 @@ public class BuildController : MonoBehaviour
             if (hit.transform.name == "City")
             {
                 building = Instantiate(gameManager.buildingToPlace, hit.point, Quaternion.identity);
-                buildings.Add(building);
                 building.transform.SetParent(hit.transform, true);
                 gameManager.canBuild = false;
+                gameManager.inPreview = false;
                 buildAction.action.Disable();
                 buildAction.action.performed -= Build;
             }
