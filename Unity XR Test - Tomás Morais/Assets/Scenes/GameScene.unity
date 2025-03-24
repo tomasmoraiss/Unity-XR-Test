@@ -3522,6 +3522,14 @@ PrefabInstance:
       propertyPath: snowParticleSystem
       value: 
       objectReference: {fileID: 1468602818}
+    - target: {fileID: 5874528278700667765, guid: daaff6bc356427643b746c87445c8b07, type: 3}
+      propertyPath: maxTimeBetweenEvents
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874528278700667765, guid: daaff6bc356427643b746c87445c8b07, type: 3}
+      propertyPath: minTimeBetweenEvents
+      value: 45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
