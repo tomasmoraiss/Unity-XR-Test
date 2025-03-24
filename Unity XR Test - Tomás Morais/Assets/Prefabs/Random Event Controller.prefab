@@ -48,7 +48,9 @@ MonoBehaviour:
   rainParticleSystem: {fileID: 0}
   waterBlockObject: {fileID: 0}
   snowBlockObject: {fileID: 0}
-  gameManager: {fileID: 8559043477178202243, guid: c881fc78efe9efb44b09cdb8c90cc7f8, type: 3}
-  minTimeBetweenEvents: 5
-  maxTimeBetweenEvents: 10
+  gameManager: {fileID: 0}
+  minTimeBetweenEvents: 45
+  maxTimeBetweenEvents: 65
   eventDuration: 5
+  rainText: {fileID: 0}
+  snowText: {fileID: 0}

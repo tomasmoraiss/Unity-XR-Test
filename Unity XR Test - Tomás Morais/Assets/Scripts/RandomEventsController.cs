@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 using Random = UnityEngine.Random;
 
 public class RandomEventsController : MonoBehaviour
@@ -27,6 +28,10 @@ public class RandomEventsController : MonoBehaviour
     [SerializeField] private float minTimeBetweenEvents;
     [SerializeField] private float maxTimeBetweenEvents;
     [SerializeField] private float eventDuration;
+    
+    [Header("Interaction Text")]
+    [SerializeField] private GameObject rainText;
+    [SerializeField] private GameObject snowText;
 
     private const int EVENT_TYPE_COUNT = 2;
 
@@ -40,6 +45,7 @@ public class RandomEventsController : MonoBehaviour
     {
         while (true)
         {
+            //Choose a random time from the min and the max time between the events to add randomness to the events
             float timeBetweenEvents = Random.Range(minTimeBetweenEvents, maxTimeBetweenEvents);
             yield return new WaitForSeconds(timeBetweenEvents);
 
@@ -76,6 +82,7 @@ public class RandomEventsController : MonoBehaviour
         }
     }
 
+    //Clear all effects from the random events
     private void ClearEvents()
     {
         StopWeatherEffects();
@@ -90,6 +97,8 @@ public class RandomEventsController : MonoBehaviour
     private void TriggerSnowEvent()
     {
         gameManager.isSnowing = true;
+        gameManager.canBuild = false;
+        snowText.gameObject.SetActive(true);
         snowBlockObject.SetActive(true);
         
         if (!snowParticleSystem.isPlaying)
@@ -101,7 +110,8 @@ public class RandomEventsController : MonoBehaviour
     private void TriggerRainEvent()
     {
         gameManager.isRaining = true;
-        
+        gameManager.canBuild = false;
+        rainText.gameObject.SetActive(true);
         if (!rainParticleSystem.isPlaying)
         {
             rainParticleSystem.Play();

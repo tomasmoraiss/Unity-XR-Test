@@ -12,22 +12,18 @@ public class BuildController : MonoBehaviour
     [SerializeField] private Transform origin;
     [SerializeField] private InputActionReference buildAction;
     [SerializeField] private GameManager gameManager;
-    [SerializeField] private Grid grid;
-    [SerializeField] private GameObject gridVisualizer;
     [SerializeField] private Canvas buildButton;
     
     private GameObject building;
     
     // Update is called once per frame
-
     void Update()
     {
         if (gameManager.canBuild)
         {
             buildAction.action.Enable();
             buildAction.action.performed += Build;
-            
-            gridVisualizer.SetActive(true);
+
         }
     }
     
@@ -38,16 +34,12 @@ public class BuildController : MonoBehaviour
         {
             if (hit.transform.name == "City")
             {
-                Vector3Int gridPosition = grid.WorldToCell(hit.point);
-                
                 building = Instantiate(gameManager.buildingToPlace, hit.point, Quaternion.identity);
                 building.transform.SetParent(hit.transform, true);
-                building.transform.position = grid.CellToWorld(gridPosition);
                 
                 gameManager.canBuild = false;
                 gameManager.inPreview = false;
                 
-                gridVisualizer.SetActive(false);
                 buildButton.gameObject.SetActive(true);
                 
                 buildAction.action.Disable();

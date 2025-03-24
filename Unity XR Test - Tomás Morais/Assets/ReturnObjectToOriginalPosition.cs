@@ -20,6 +20,7 @@ public class ReturnObjectToOriginalPosition : MonoBehaviour
 
     public void OnRelease()
     {
+        //Add a lot of damping so that the object isn't affected by gravity and drifts away
         rb.angularDamping = 100;
         rb.linearDamping = 100;
         rb.linearVelocity = new Vector3(0f, 0f, 0f);

@@ -11,11 +11,9 @@ public class PreviewBuildingController : MonoBehaviour
     private GameObject buildingPreview;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void Start()
+    void Start()
     {
-        previewMaterialInstance = new Material(previewMaterialPrefab);
-        buildingPreview = Instantiate(gameManager.buildingToPlace, gameManager.buildingToPlace.transform.position, Quaternion.identity);
-        buildingPreview.GetComponent<MeshRenderer>().material = previewMaterialInstance;
+        
     }
 
     // Update is called once per frame
@@ -29,6 +27,15 @@ public class PreviewBuildingController : MonoBehaviour
         }
     }
 
+    public void CreatePreview()
+    {
+        previewMaterialInstance = new Material(previewMaterialPrefab);
+        //Create a copy of the instance and change its material
+        buildingPreview = Instantiate(gameManager.buildingToPlace, gameManager.buildingToPlace.transform.position, Quaternion.identity);
+        buildingPreview.GetComponent<MeshRenderer>().material = previewMaterialInstance;
+    }
+
+    //Make the preview follow the player's controller
     private void UpdatePositionOfPreview()
     {
         RaycastHit hit;
