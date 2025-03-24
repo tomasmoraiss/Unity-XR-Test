@@ -17,6 +17,10 @@ public class RandomEventsController : MonoBehaviour
     [SerializeField] private ParticleSystem snowParticleSystem;
     [SerializeField] private ParticleSystem rainParticleSystem;
     
+    [Header("Audio Sources")]
+    [SerializeField] private AudioSource rainAudioSource;
+    [SerializeField] private AudioSource snowAudioSource;
+    
     [Header("Game Objects")]
     [SerializeField] private GameObject waterBlockObject;
     [SerializeField] private GameObject snowBlockObject;
@@ -92,6 +96,8 @@ public class RandomEventsController : MonoBehaviour
     {
         snowParticleSystem?.Stop();
         rainParticleSystem?.Stop();
+        rainAudioSource?.Stop();
+        snowAudioSource?.Stop();
     }
     
     private void TriggerSnowEvent()
@@ -104,6 +110,7 @@ public class RandomEventsController : MonoBehaviour
         if (!snowParticleSystem.isPlaying)
         {
             snowParticleSystem.Play();
+            snowAudioSource.Play();
         }
     }
 
@@ -115,6 +122,7 @@ public class RandomEventsController : MonoBehaviour
         if (!rainParticleSystem.isPlaying)
         {
             rainParticleSystem.Play();
+            rainAudioSource.Play();
         }
     }
     
